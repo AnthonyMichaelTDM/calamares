@@ -496,9 +496,17 @@ class PMPacman(PackageManager):
 
         if self.pacman_needed_only is True:
             command.append("--needed")
+            command.append("--ask=4")
 
         if self.pacman_disable_timeout is True:
             command.append("--disable-download-timeout")
+
+        nvidia_versions = ["nvidia-340xx-dkms", "nvidia-390xx-dkms", "nvidia-470xx-dkms", "nvidia-525xx-dkms"]
+        for pkg in pkgs:
+            if pkg in nvidia_versions:
+                # Remove the nvidia-dkms package if installing a specific version of the NVIDIA driver
+                self.remove(["nvidia-dkms", "nvidia-settings", "nvidia-utils"])
+                break  # Assumes only one NVIDIA driver is being processed at a time
 
         command += pkgs
 
@@ -513,6 +521,7 @@ class PMPacman(PackageManager):
         self.run_pacman(["pacman", "-Sy"])
 
     def update_system(self):
+        self.run_pacman(["pacman", "-S", "archlinux-keyring", "--noconfirm"])
         command = ["pacman", "-Su", "--noconfirm"]
         if self.pacman_disable_timeout is True:
             command.append("--disable-download-timeout")

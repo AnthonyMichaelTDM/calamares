@@ -197,8 +197,17 @@ desktop_environments = [
     DesktopEnvironment('/usr/bin/sway', 'sway'),
     DesktopEnvironment('/usr/bin/ukui-session', 'ukui'),
     DesktopEnvironment('/usr/bin/cutefish-session', 'cutefish-xsession'),
+    DesktopEnvironment('/usr/bin/wmderland', 'wmderland'),
+    DesktopEnvironment('/usr/bin/leftwm', 'leftwm'),
+    DesktopEnvironment('/usr/bin/berry', 'berry'),
+    DesktopEnvironment('/usr/bin/worm', 'worm'),
     DesktopEnvironment('/usr/bin/river', 'river'),
     DesktopEnvironment('/usr/bin/Hyprland', 'hyprland'),
+    DesktopEnvironment('/usr/bin/nimdow', 'nimdow'),
+    DesktopEnvironment('/usr/bin/wayfire', 'wayfire'),
+    DesktopEnvironment('/usr/local/bin/arcolinux-autostart-dusk', 'dusk'),
+    DesktopEnvironment('/usr/bin/exec-chadwm', 'chadwm'),
+    DesktopEnvironment('/usr/bin/run-niri', 'niri'),
 ]
 
 
