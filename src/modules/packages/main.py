@@ -504,8 +504,8 @@ class PMPacman(PackageManager):
         nvidia_versions = ["nvidia-340xx-dkms", "nvidia-390xx-dkms", "nvidia-470xx-dkms", "nvidia-525xx-dkms"]
         for pkg in pkgs:
             if pkg in nvidia_versions:
-                # Remove the nvidia-dkms package if installing a specific version of the NVIDIA driver
-                self.remove(["nvidia-dkms", "nvidia-settings", "nvidia-utils"])
+                # Remove the nvidia-open-dkms package if installing a specific version of the NVIDIA driver
+                self.remove(["nvidia-open-dkms", "nvidia-settings", "nvidia-utils"])
                 break  # Assumes only one NVIDIA driver is being processed at a time
 
         command += pkgs
